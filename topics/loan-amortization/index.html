@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loan Amortization — Finance Explainers</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="back" href="../../index.html" data-i18n="back">← Все темы</a>
+    <div class="controls">
+      <button class="iconbtn" id="lang-toggle">EN</button>
+      <button class="iconbtn" id="theme-toggle">🌙</button>
+    </div>
+  </div>
+
+  <div class="topic-head">
+    <h1 data-i18n="title">Амортизация кредита</h1>
+    <p data-i18n="intro">Платёж одинаковый каждый месяц, но его состав меняется: сначала почти весь платёж — это проценты банку, и только потом — погашение долга.</p>
+  </div>
+
+  <div class="panel">
+    <div class="controls-card">
+      <div class="field">
+        <label><span data-i18n="f_loan">Сумма кредита</span><span class="val" id="v-loan">$300,000</span></label>
+        <input type="range" id="loan" min="20000" max="1000000" step="10000" value="300000">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_rate">Ставка в год</span><span class="val" id="v-rate">6%</span></label>
+        <input type="range" id="rate" min="1" max="15" step="0.25" value="6">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_term">Срок, лет</span><span class="val" id="v-term">30</span></label>
+        <input type="range" id="term" min="5" max="30" step="1" value="30">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_month">Платёж №</span><span class="val" id="v-month">1</span></label>
+        <input type="range" id="month" min="1" max="360" step="1" value="1">
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="legend">
+        <span class="item"><span class="dot" style="background:var(--series-3)"></span><span data-i18n="leg_interest">Проценты</span></span>
+        <span class="item"><span class="dot" style="background:var(--series-1)"></span><span data-i18n="leg_principal">Погашение долга</span></span>
+      </div>
+      <div class="chart-wrap">
+        <svg class="chart-svg" id="chart" viewBox="0 0 760 360" preserveAspectRatio="xMidYMid meet"></svg>
+        <div class="tooltip" id="tooltip"></div>
+      </div>
+      <div class="insight" id="insight-text"></div>
+      <div class="stat-row">
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_payment">Платёж</div>
+          <div class="value" id="st-payment">$0</div>
+        </div>
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_split">Проценты / долг</div>
+          <div class="value" id="st-split">—</div>
+        </div>
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_balance">Остаток долга</div>
+          <div class="value" id="st-balance">$0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+window.I18N = {
+  ru: {
+    back: "← Все темы",
+    title: "Амортизация кредита",
+    intro: "Платёж одинаковый каждый месяц, но его состав меняется: сначала почти весь платёж — это проценты банку, и только потом — погашение долга.",
+    f_loan: "Сумма кредита", f_rate: "Ставка в год", f_term: "Срок, лет", f_month: "Платёж №",
+    leg_interest: "Проценты", leg_principal: "Погашение долга",
+    tt_month: "Платёж", tt_interest: "Проценты", tt_principal: "Долг",
+    st_payment: "Платёж", st_split: "Проценты / долг", st_balance: "Остаток долга"
+  },
+  en: {
+    back: "← All topics",
+    title: "Loan Amortization",
+    intro: "The payment is the same every month, but its mix changes: early on almost all of it is interest to the bank, and only later does it actually pay down the debt.",
+    f_loan: "Loan amount", f_rate: "Annual rate", f_term: "Term, years", f_month: "Payment #",
+    leg_interest: "Interest", leg_principal: "Principal",
+    tt_month: "Payment", tt_interest: "Interest", tt_principal: "Principal",
+    st_payment: "Payment", st_split: "Interest / principal", st_balance: "Remaining balance"
+  }
+};
+</script>
+<script src="../../assets/common.js"></script>
+<script src="../../assets/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

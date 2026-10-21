@@ -84,6 +84,7 @@ window.FEChart = (function () {
       });
     }
 
+    var placedLabelYs = [];
     (cfg.series || []).forEach(function (s) {
       if (s.area) {
         var base = new Array(n).fill(yMin);
@@ -94,6 +95,8 @@ window.FEChart = (function () {
       svg.appendChild(el('path', lineAttrs));
       if (s.endLabel) {
         var ex = xScale(n - 1) + 8, ey = yScale(s.values[n - 1]);
+        while (placedLabelYs.some(function (py) { return Math.abs(py - ey) < 14; })) ey += 14;
+        placedLabelYs.push(ey);
         var g2 = el('g', {});
         g2.appendChild(el('circle', { cx: ex, cy: ey - 4, r: 3, style: 'fill:' + s.color }));
         var et = el('text', { x: ex + 8, y: ey, class: 'end-label' });

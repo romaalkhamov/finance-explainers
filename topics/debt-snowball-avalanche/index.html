@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snowball vs Avalanche — Finance Explainers</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="back" href="../../index.html" data-i18n="back">← Все темы</a>
+    <div class="controls">
+      <button class="iconbtn" id="lang-toggle">EN</button>
+      <button class="iconbtn" id="theme-toggle">🌙</button>
+    </div>
+  </div>
+
+  <div class="topic-head">
+    <h1 data-i18n="title">Snowball vs Avalanche</h1>
+    <p data-i18n="intro">Три долга, один лишний платёж сверху минимумов. Snowball сначала добивает самый маленький долг — Avalanche сначала самый дорогой по ставке. Куда лучше направить «лишние» деньги?</p>
+  </div>
+
+  <div class="panel">
+    <div class="controls-card">
+      <div class="hint" data-i18n="debts_hint">Три долга для примера:</div>
+      <div class="field">
+        <label><span data-i18n="d1">💳 Кредитка</span><span class="val">$6,000 · 22%</span></label>
+      </div>
+      <div class="field">
+        <label><span data-i18n="d2">🚗 Личный заём</span><span class="val">$2,000 · 10%</span></label>
+      </div>
+      <div class="field">
+        <label><span data-i18n="d3">🎓 Студенческий</span><span class="val">$15,000 · 5%</span></label>
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_extra">Доп. платёж в месяц сверху минимумов</span><span class="val" id="v-extra">$100</span></label>
+        <input type="range" id="extra" min="0" max="1500" step="25" value="100">
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="legend">
+        <span class="item"><span class="dot" style="background:var(--series-1)"></span><span data-i18n="leg_snowball">Snowball (сначала мелкий)</span></span>
+        <span class="item"><span class="dot" style="background:var(--series-2)"></span><span data-i18n="leg_avalanche">Avalanche (сначала дорогой)</span></span>
+      </div>
+      <div class="chart-wrap">
+        <svg class="chart-svg" id="chart" viewBox="0 0 760 360" preserveAspectRatio="xMidYMid meet"></svg>
+        <div class="tooltip" id="tooltip"></div>
+      </div>
+      <div class="insight" id="insight-text"></div>
+      <div class="stat-row">
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_months_sb">Snowball: месяцев</div>
+          <div class="value" id="st-months-sb">0</div>
+        </div>
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_months_av">Avalanche: месяцев</div>
+          <div class="value" id="st-months-av">0</div>
+        </div>
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_interest_diff">Avalanche экономит на процентах</div>
+          <div class="value good" id="st-interest-diff">$0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+window.I18N = {
+  ru: {
+    back: "← Все темы",
+    title: "Snowball vs Avalanche",
+    intro: "Три долга, один лишний платёж сверху минимумов. Snowball сначала добивает самый маленький долг — Avalanche сначала самый дорогой по ставке. Куда лучше направить «лишние» деньги?",
+    debts_hint: "Три долга для примера:",
+    d1: "💳 Кредитка", d2: "🚗 Личный заём", d3: "🎓 Студенческий",
+    f_extra: "Доп. платёж в месяц сверху минимумов",
+    leg_snowball: "Snowball (сначала мелкий)", leg_avalanche: "Avalanche (сначала дорогой)",
+    tt_month: "Месяц", tt_sb: "Snowball", tt_av: "Avalanche",
+    st_months_sb: "Snowball: месяцев", st_months_av: "Avalanche: месяцев", st_interest_diff: "Avalanche экономит на процентах",
+    end_sb: "Snowball", end_av: "Avalanche"
+  },
+  en: {
+    back: "← All topics",
+    title: "Snowball vs Avalanche",
+    intro: "Three debts, one extra payment on top of the minimums. Snowball attacks the smallest balance first — Avalanche attacks the highest rate first. Where should the extra money go?",
+    debts_hint: "Three example debts:",
+    d1: "💳 Credit card", d2: "🚗 Personal loan", d3: "🎓 Student loan",
+    f_extra: "Extra payment per month on top of minimums",
+    leg_snowball: "Snowball (smallest first)", leg_avalanche: "Avalanche (highest rate first)",
+    tt_month: "Month", tt_sb: "Snowball", tt_av: "Avalanche",
+    st_months_sb: "Snowball: months", st_months_av: "Avalanche: months", st_interest_diff: "Avalanche saves in interest",
+    end_sb: "Snowball", end_av: "Avalanche"
+  }
+};
+</script>
+<script src="../../assets/common.js"></script>
+<script src="../../assets/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
