@@ -316,6 +316,9 @@ a { color: inherit; text-decoration: none; }
 .stat-tile .value.bad { color: var(--bad); }
 .stat-tile .sub { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
 
+.meter { height: 8px; border-radius: 4px; background: var(--gridline); overflow: hidden; margin-top: 10px; }
+.meter > div { height: 100%; border-radius: 4px; background: var(--series-1); }
+
 .hint {
   font-size: 13px;
   color: var(--text-secondary);

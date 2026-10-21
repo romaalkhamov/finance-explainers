@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Effective vs Marginal Tax Rate — Finance Explainers</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="back" href="../../index.html" data-i18n="back">← Все темы</a>
+    <div class="controls">
+      <button class="iconbtn" id="lang-toggle">EN</button>
+      <button class="iconbtn" id="theme-toggle">🌙</button>
+    </div>
+  </div>
+
+  <div class="topic-head">
+    <h1 data-i18n="title">Эффективная vs маржинальная налоговая ставка</h1>
+    <p data-i18n="intro">Переход в новую налоговую вилку не облагает по новой ставке всю зарплату — только ту часть, что выше границы. Двигай доход и смотри, как заполняются ступени.</p>
+  </div>
+
+  <div class="chart-card">
+    <div class="hint" data-i18n="note">Иллюстративные ставки США для одного плательщика (2024), без вычетов.</div>
+    <div class="field" style="margin-bottom:8px;">
+      <label><span data-i18n="f_income">Годовой доход</span><span class="val" id="v-income">$80,000</span></label>
+      <input type="range" id="income" min="0" max="700000" step="1000" value="80000">
+    </div>
+    <div class="chart-wrap">
+      <svg class="chart-svg" id="brackets" viewBox="0 0 760 90" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="tooltip" id="tooltip"></div>
+    </div>
+    <div class="insight" id="insight-text"></div>
+    <div class="stat-row">
+      <div class="stat-tile">
+        <div class="label" data-i18n="st_marginal">Маржинальная ставка (на последний $)</div>
+        <div class="value" id="st-marginal">0%</div>
+        <div class="meter"><div id="meter-marginal"></div></div>
+      </div>
+      <div class="stat-tile">
+        <div class="label" data-i18n="st_effective">Эффективная ставка (налог / доход)</div>
+        <div class="value" id="st-effective">0%</div>
+        <div class="meter"><div id="meter-effective"></div></div>
+      </div>
+      <div class="stat-tile">
+        <div class="label" data-i18n="st_tax">Налог за год</div>
+        <div class="value" id="st-tax">$0</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+window.I18N = {
+  ru: {
+    back: "← Все темы",
+    title: "Эффективная vs маржинальная налоговая ставка",
+    intro: "Переход в новую налоговую вилку не облагает по новой ставке всю зарплату — только ту часть, что выше границы. Двигай доход и смотри, как заполняются ступени.",
+    f_income: "Годовой доход",
+    tt_bracket: "Ступень", tt_range: "Диапазон", tt_rate: "Ставка",
+    st_marginal: "Маржинальная ставка (на последний $)", st_effective: "Эффективная ставка (налог / доход)", st_tax: "Налог за год",
+    note: "Иллюстративные ставки США для одного плательщика (2024), без вычетов."
+  },
+  en: {
+    back: "← All topics",
+    title: "Effective vs Marginal Tax Rate",
+    intro: "Moving into a new tax bracket doesn't tax your whole paycheck at the new rate — only the slice above the threshold. Drag the income and watch the brackets fill.",
+    f_income: "Annual income",
+    tt_bracket: "Bracket", tt_range: "Range", tt_rate: "Rate",
+    st_marginal: "Marginal rate (on the last $)", st_effective: "Effective rate (tax / income)", st_tax: "Tax owed this year",
+    note: "Illustrative US single-filer brackets (2024), before deductions."
+  }
+};
+</script>
+<script src="../../assets/common.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

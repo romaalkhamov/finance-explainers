@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Insurance Works — Finance Explainers</title>
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+  .pool-dot { transition: fill .5s ease; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="back" href="../../index.html" data-i18n="back">← Все темы</a>
+    <div class="controls">
+      <button class="iconbtn" id="lang-toggle">EN</button>
+      <button class="iconbtn" id="theme-toggle">🌙</button>
+    </div>
+  </div>
+
+  <div class="topic-head">
+    <h1 data-i18n="title">Как работает страхование</h1>
+    <p data-i18n="intro">Каждый платит немного в общий пул. В конце года у части людей случается страховой случай — им выплачивают из пула. Жми «Прожить год», чтобы увидеть, кому повезло, а кому нет.</p>
+  </div>
+
+  <div class="panel">
+    <div class="controls-card">
+      <div class="field">
+        <label><span data-i18n="f_pool">Людей в пуле</span><span class="val" id="v-pool">100</span></label>
+        <input type="range" id="pool" min="20" max="200" step="10" value="100">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_prob">Вероятность случая в год</span><span class="val" id="v-prob">5%</span></label>
+        <input type="range" id="prob" min="1" max="25" step="1" value="5">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_claim">Средняя выплата по случаю</span><span class="val" id="v-claim">$8,000</span></label>
+        <input type="range" id="claim" min="1000" max="50000" step="1000" value="8000">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_margin">Наценка страховщика</span><span class="val" id="v-margin">15%</span></label>
+        <input type="range" id="margin" min="0" max="50" step="5" value="15">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_premium">Премия с человека в год</span><span class="val" id="v-premium">$0</span></label>
+      </div>
+      <button class="iconbtn" id="run-year" style="width:100%;" data-i18n="f_run">▶ Прожить год</button>
+    </div>
+
+    <div class="chart-card">
+      <div class="legend">
+        <span class="item"><span class="dot" style="background:var(--series-2)"></span><span data-i18n="leg_ok">Заплатил, случая не было</span></span>
+        <span class="item"><span class="dot" style="background:var(--bad)"></span><span data-i18n="leg_claim">Получил выплату</span></span>
+      </div>
+      <svg class="chart-svg" id="pool-svg" viewBox="0 0 760 180" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="insight" id="insight-text"></div>
+      <div class="stat-row">
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_collected">Собрано премий</div>
+          <div class="value" id="st-collected">$0</div>
+        </div>
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_paid">Выплачено по случаям</div>
+          <div class="value" id="st-paid">$0</div>
+        </div>
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_years">Лет прожито · случаев в среднем</div>
+          <div class="value" id="st-years">0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+window.I18N = {
+  ru: {
+    back: "← Все темы",
+    title: "Как работает страхование",
+    intro: "Каждый платит немного в общий пул. В конце года у части людей случается страховой случай — им выплачивают из пула. Жми «Прожить год», чтобы увидеть, кому повезло, а кому нет.",
+    f_pool: "Людей в пуле", f_prob: "Вероятность случая в год", f_claim: "Средняя выплата по случаю",
+    f_margin: "Наценка страховщика", f_premium: "Премия с человека в год", f_run: "▶ Прожить год",
+    leg_ok: "Заплатил, случая не было", leg_claim: "Получил выплату",
+    st_collected: "Собрано премий", st_paid: "Выплачено по случаям", st_years: "Лет прожито · случаев в среднем"
+  },
+  en: {
+    back: "← All topics",
+    title: "How Insurance Works",
+    intro: "Everyone pays a little into a shared pool. By year's end a few people have a claim — they get paid out of the pool. Click \"Live a year\" to see who got unlucky.",
+    f_pool: "People in the pool", f_prob: "Claim probability per year", f_claim: "Average claim payout",
+    f_margin: "Insurer margin", f_premium: "Premium per person per year", f_run: "▶ Live a year",
+    leg_ok: "Paid in, no claim", leg_claim: "Got a payout",
+    st_collected: "Premiums collected", st_paid: "Claims paid out", st_years: "Years lived · avg claim rate"
+  }
+};
+</script>
+<script src="../../assets/common.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
