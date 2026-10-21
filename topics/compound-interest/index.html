@@ -22,14 +22,6 @@
     <p data-i18n="intro">Двигай слайдеры: смотри, как растёт сумма номинально — и сколько из этого роста «съедает» инфляция в реальной покупательной способности.</p>
   </div>
 
-  <div class="chart-card sb-card">
-    <div class="legend" style="justify-content:space-between;">
-      <span data-i18n="sb_caption">Шар — твоя сумма, спуск с горки — время. Перетащи мышью, чтобы покрутить.</span>
-      <button class="iconbtn" id="sb-play" data-i18n="sb_play">▶ Прокрутить годы</button>
-    </div>
-    <div id="sb-canvas-wrap" class="sb-wrap"></div>
-  </div>
-
   <div class="panel">
     <div class="controls-card">
 
@@ -91,8 +83,6 @@ window.I18N = {
     leg_nominal: "Номинальная сумма", leg_real: "Реальная (с учётом инфляции)",
     tt_year: "Год", tt_nominal: "Номинал", tt_real: "Реально",
     end_nominal: "Номинал", end_real: "Реально",
-    sb_caption: "Шар — твоя сумма, спуск с горки — время. Перетащи мышью, чтобы покрутить.",
-    sb_play: "▶ Прокрутить годы"
   },
   en: {
     back: "← All topics",
@@ -104,19 +94,11 @@ window.I18N = {
     leg_nominal: "Nominal amount", leg_real: "Real (inflation-adjusted)",
     tt_year: "Year", tt_nominal: "Nominal", tt_real: "Real",
     end_nominal: "Nominal", end_real: "Real",
-    sb_caption: "The ball is your balance, rolling downhill is time. Drag to look around.",
-    sb_play: "▶ Play through the years"
   }
 };
 </script>
 <script src="../../assets/common.js"></script>
+<script src="../../assets/chart.js"></script>
 <script src="script.js"></script>
-<script type="importmap">
-{ "imports": {
-  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-} }
-</script>
-<script type="module" src="snowball3d.js"></script>
 </body>
 </html>

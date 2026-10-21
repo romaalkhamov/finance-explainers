@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DCA vs Lump Sum — Finance Explainers</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="back" href="../../index.html" data-i18n="back">← Все темы</a>
+    <div class="controls">
+      <button class="iconbtn" id="lang-toggle">EN</button>
+      <button class="iconbtn" id="theme-toggle">🌙</button>
+    </div>
+  </div>
+
+  <div class="topic-head">
+    <h1 data-i18n="title">DCA vs разовая инвестиция</h1>
+    <p data-i18n="intro">Один и тот же рынок, две стратегии: вложить всю сумму сразу или растянуть покупки на несколько месяцев. Жми «Переиграть рынок» — путь цены каждый раз новый.</p>
+  </div>
+
+  <div class="panel">
+    <div class="controls-card">
+      <div class="field">
+        <label><span data-i18n="f_amount">Сумма к инвестированию</span><span class="val" id="v-amount">$12,000</span></label>
+        <input type="range" id="amount" min="1000" max="50000" step="1000" value="12000">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_dca">Растянуть DCA на, мес.</span><span class="val" id="v-dca">12</span></label>
+        <input type="range" id="dcaMonths" min="1" max="36" step="1" value="12">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_years">Горизонт, лет</span><span class="val" id="v-years">10</span></label>
+        <input type="range" id="years" min="3" max="20" step="1" value="10">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_return">Ожидаемая доходность рынка</span><span class="val" id="v-return">8%</span></label>
+        <input type="range" id="expReturn" min="-5" max="20" step="1" value="8">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_vol">Волатильность рынка</span><span class="val" id="v-vol">18%</span></label>
+        <input type="range" id="vol" min="5" max="45" step="1" value="18">
+      </div>
+      <button class="iconbtn" id="reroll" style="width:100%;" data-i18n="f_reroll">🎲 Переиграть рынок</button>
+    </div>
+
+    <div class="chart-card">
+      <div class="legend">
+        <span class="item"><span class="dot" style="background:var(--series-1)"></span><span data-i18n="leg_lump">Разово (всё сразу)</span></span>
+        <span class="item"><span class="dot" style="background:var(--series-2)"></span><span data-i18n="leg_dca">DCA (по частям)</span></span>
+      </div>
+      <div class="chart-wrap">
+        <svg class="chart-svg" id="chart" viewBox="0 0 760 360" preserveAspectRatio="xMidYMid meet"></svg>
+        <div class="tooltip" id="tooltip"></div>
+      </div>
+      <div class="insight" id="insight-text"></div>
+      <div class="stat-row">
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_runs">Запусков</div>
+          <div class="value" id="st-runs">1</div>
+        </div>
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_lumpwins">Разово побеждало</div>
+          <div class="value" id="st-lumpwins">0 (0%)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+window.I18N = {
+  ru: {
+    back: "← Все темы",
+    title: "DCA vs разовая инвестиция",
+    intro: "Один и тот же рынок, две стратегии: вложить всю сумму сразу или растянуть покупки на несколько месяцев. Жми «Переиграть рынок» — путь цены каждый раз новый.",
+    f_amount: "Сумма к инвестированию", f_dca: "Растянуть DCA на, мес.", f_years: "Горизонт, лет",
+    f_return: "Ожидаемая доходность рынка", f_vol: "Волатильность рынка", f_reroll: "🎲 Переиграть рынок",
+    leg_lump: "Разово (всё сразу)", leg_dca: "DCA (по частям)",
+    tt_month: "Месяц", tt_lump: "Разово", tt_dca: "DCA",
+    st_runs: "Запусков", st_lumpwins: "Разово побеждало",
+    end_lump: "Разово", end_dca: "DCA"
+  },
+  en: {
+    back: "← All topics",
+    title: "DCA vs Lump Sum",
+    intro: "Same market, two strategies: invest it all on day one, or spread purchases over several months. Click \"Reroll the market\" — a fresh random price path each time.",
+    f_amount: "Amount to invest", f_dca: "Spread DCA over, months", f_years: "Horizon, years",
+    f_return: "Expected market return", f_vol: "Market volatility", f_reroll: "🎲 Reroll the market",
+    leg_lump: "Lump sum (all at once)", leg_dca: "DCA (spread out)",
+    tt_month: "Month", tt_lump: "Lump sum", tt_dca: "DCA",
+    st_runs: "Runs", st_lumpwins: "Lump sum won",
+    end_lump: "Lump sum", end_dca: "DCA"
+  }
+};
+</script>
+<script src="../../assets/common.js"></script>
+<script src="../../assets/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
