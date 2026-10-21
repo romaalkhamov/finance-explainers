@@ -281,6 +281,18 @@ a { color: inherit; text-decoration: none; }
 
 .chart-wrap { position: relative; }
 
+.sb-card { margin-top: 24px; }
+.sb-wrap {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 12px;
+  cursor: grab;
+}
+.sb-wrap:active { cursor: grabbing; }
+.sb-wrap canvas { display: block; }
+
 .insight {
   margin-top: 16px;
   padding-top: 16px;

@@ -10,6 +10,7 @@
     else root.setAttribute('data-theme', t);
     var btn = document.getElementById('theme-toggle');
     if (btn) btn.textContent = t === 'dark' ? '☀️' : '🌙';
+    document.dispatchEvent(new CustomEvent('fe-theme-changed'));
   }
 
   function getLang() {

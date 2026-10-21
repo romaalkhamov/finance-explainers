@@ -186,6 +186,7 @@
     var data = compute();
     render(data);
     renderInsight(data);
+    document.dispatchEvent(new CustomEvent('fe-data-changed', { detail: data }));
   }
 
   [els.principal, els.rate, els.years, els.inflation].forEach(function (input) {
