@@ -142,8 +142,6 @@ a { color: inherit; text-decoration: none; }
   transition: transform .12s ease, border-color .12s ease;
 }
 .card:hover { transform: translateY(-2px); border-color: var(--text-muted); }
-.card.soon { opacity: 0.55; cursor: default; }
-.card.soon:hover { transform: none; border-color: var(--border); }
 
 .card .tag {
   font-size: 11px;
@@ -162,17 +160,6 @@ a { color: inherit; text-decoration: none; }
   margin: 0;
   line-height: 1.4;
 }
-.badge-soon {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 10px;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 2px 8px;
-}
-
 /* ---- Topic page ---- */
 .topic-head h1 {
   font-size: 26px;
