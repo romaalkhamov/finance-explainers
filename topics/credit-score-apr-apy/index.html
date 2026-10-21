@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Credit Score & APR vs APY — Finance Explainers</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="back" href="../../index.html" data-i18n="back">← Все темы</a>
+    <div class="controls">
+      <button class="iconbtn" id="lang-toggle">EN</button>
+      <button class="iconbtn" id="theme-toggle">🌙</button>
+    </div>
+  </div>
+
+  <div class="topic-head">
+    <h1 data-i18n="title">Кредитный рейтинг и APR vs APY</h1>
+    <p data-i18n="intro">Пять факторов складываются в один рейтинг. А «процентная ставка» на двух разных бумагах может означать разные деньги — всё зависит от того, как часто она капитализируется.</p>
+  </div>
+
+  <div class="panel">
+    <div class="controls-card">
+      <div class="field">
+        <label><span data-i18n="f_ontime">Платежи вовремя</span><span class="val" id="v-ontime">95%</span></label>
+        <input type="range" id="ontime" min="0" max="100" step="1" value="95">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_util">Использование лимита карты</span><span class="val" id="v-util">30%</span></label>
+        <input type="range" id="util" min="0" max="100" step="1" value="30">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_history">Кредитная история, лет</span><span class="val" id="v-history">5</span></label>
+        <input type="range" id="history" min="0" max="30" step="1" value="5">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_mix">Типов кредита</span><span class="val" id="v-mix">2</span></label>
+        <input type="range" id="mix" min="1" max="6" step="1" value="2">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_inquiries">Новых заявок за год</span><span class="val" id="v-inquiries">1</span></label>
+        <input type="range" id="inquiries" min="0" max="10" step="1" value="1">
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <svg class="chart-svg" id="gauge" viewBox="0 0 400 230" preserveAspectRatio="xMidYMid meet" style="max-width:420px;margin:0 auto;display:block;"></svg>
+      <div class="insight" id="insight-text" style="text-align:center;"></div>
+    </div>
+  </div>
+
+  <div class="chart-card" style="margin-top:24px;">
+    <div class="topic-head" style="margin-bottom:0;">
+      <h2 style="font-size:19px;margin:0 0 6px;" data-i18n="apr_title">APR vs APY: одна цифра, разные деньги</h2>
+      <p style="font-size:14px;" data-i18n="apr_intro">APR — заявленная годовая ставка. APY — то, что ты реально платишь или зарабатываешь, с учётом капитализации.</p>
+    </div>
+    <div class="field" style="margin-top:16px;">
+      <label><span data-i18n="f_apr">Заявленный APR</span><span class="val" id="v-apr">20%</span></label>
+      <input type="range" id="apr" min="1" max="30" step="0.5" value="20">
+    </div>
+    <div class="seg" id="freq-seg" style="max-width:360px;">
+      <button data-n="1" data-i18n="freq_annual">раз в год</button>
+      <button data-n="12" class="active" data-i18n="freq_monthly">ежемесячно</button>
+      <button data-n="365" data-i18n="freq_daily">ежедневно</button>
+    </div>
+    <div class="stat-row">
+      <div class="stat-tile">
+        <div class="label" data-i18n="st_apr">APR (заявленная)</div>
+        <div class="value" id="st-apr">20%</div>
+        <div class="meter"><div id="meter-apr"></div></div>
+      </div>
+      <div class="stat-tile">
+        <div class="label" data-i18n="st_apy">APY (реальная эффективная)</div>
+        <div class="value bad" id="st-apy">21.9%</div>
+        <div class="meter"><div id="meter-apy" style="background:var(--bad)"></div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+window.I18N = {
+  ru: {
+    back: "← Все темы",
+    title: "Кредитный рейтинг и APR vs APY",
+    intro: "Пять факторов складываются в один рейтинг. А «процентная ставка» на двух разных бумагах может означать разные деньги — всё зависит от того, как часто она капитализируется.",
+    f_ontime: "Платежи вовремя", f_util: "Использование лимита карты", f_history: "Кредитная история, лет",
+    f_mix: "Типов кредита", f_inquiries: "Новых заявок за год",
+    apr_title: "APR vs APY: одна цифра, разные деньги",
+    apr_intro: "APR — заявленная годовая ставка. APY — то, что ты реально платишь или зарабатываешь, с учётом капитализации.",
+    f_apr: "Заявленный APR",
+    freq_annual: "раз в год", freq_monthly: "ежемесячно", freq_daily: "ежедневно",
+    st_apr: "APR (заявленная)", st_apy: "APY (реальная эффективная)",
+    band_poor: "Плохой", band_fair: "Средний", band_good: "Хороший", band_verygood: "Очень хороший", band_excellent: "Отличный"
+  },
+  en: {
+    back: "← All topics",
+    title: "Credit Score & APR vs APY",
+    intro: "Five factors roll up into one score. And a \"rate\" on two different pieces of paper can mean very different money — it all depends on how often it compounds.",
+    f_ontime: "On-time payments", f_util: "Credit card utilization", f_history: "Credit history, years",
+    f_mix: "Types of credit", f_inquiries: "New applications this year",
+    apr_title: "APR vs APY: one number, different money",
+    apr_intro: "APR is the stated annual rate. APY is what you actually pay or earn, once compounding is factored in.",
+    f_apr: "Stated APR",
+    freq_annual: "annually", freq_monthly: "monthly", freq_daily: "daily",
+    st_apr: "APR (stated)", st_apy: "APY (real effective)",
+    band_poor: "Poor", band_fair: "Fair", band_good: "Good", band_verygood: "Very good", band_excellent: "Exceptional"
+  }
+};
+</script>
+<script src="../../assets/common.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

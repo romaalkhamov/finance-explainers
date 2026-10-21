@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 4% Retirement Rule — Finance Explainers</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="back" href="../../index.html" data-i18n="back">← Все темы</a>
+    <div class="controls">
+      <button class="iconbtn" id="lang-toggle">EN</button>
+      <button class="iconbtn" id="theme-toggle">🌙</button>
+    </div>
+  </div>
+
+  <div class="topic-head">
+    <h1 data-i18n="title">Правило 4% на пенсии</h1>
+    <p data-i18n="intro">50 возможных путей рынка для одного и того же портфеля. Один и тот же процент снятия где-то сработает, а где-то обнулит счёт раньше срока — всё решает порядок доходностей, а не только их среднее.</p>
+  </div>
+
+  <div class="panel">
+    <div class="controls-card">
+      <div class="field">
+        <label><span data-i18n="f_portfolio">Начальный портфель</span><span class="val" id="v-portfolio">$1,000,000</span></label>
+        <input type="range" id="portfolio" min="100000" max="3000000" step="50000" value="1000000">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_withdraw">Ставка снятия в год</span><span class="val" id="v-withdraw">4%</span></label>
+        <input type="range" id="withdraw" min="2" max="8" step="0.25" value="4">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_years">Лет на пенсии</span><span class="val" id="v-years">30</span></label>
+        <input type="range" id="years" min="10" max="40" step="1" value="30">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_return">Ожидаемая доходность</span><span class="val" id="v-return">7%</span></label>
+        <input type="range" id="expReturn" min="1" max="12" step="0.5" value="7">
+      </div>
+      <div class="field">
+        <label><span data-i18n="f_vol">Волатильность</span><span class="val" id="v-vol">15%</span></label>
+        <input type="range" id="vol" min="5" max="30" step="1" value="15">
+      </div>
+      <button class="iconbtn" id="rerun" style="width:100%;" data-i18n="f_rerun">🎲 Пересчитать 50 путей</button>
+    </div>
+
+    <div class="chart-card">
+      <div class="legend">
+        <span class="item"><span class="dot" style="background:var(--series-1)"></span><span data-i18n="leg_paths">50 случайных путей рынка</span></span>
+        <span class="item"><span class="dot" style="background:var(--series-2)"></span><span data-i18n="leg_median">Медианный путь</span></span>
+      </div>
+      <div class="chart-wrap">
+        <svg class="chart-svg" id="chart" viewBox="0 0 760 360" preserveAspectRatio="xMidYMid meet"></svg>
+        <div class="tooltip" id="tooltip"></div>
+      </div>
+      <div class="insight" id="insight-text"></div>
+      <div class="stat-row">
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_success">Доля путей без обнуления счёта</div>
+          <div class="value" id="st-success">0%</div>
+        </div>
+        <div class="stat-tile">
+          <div class="label" data-i18n="st_worst">Худший путь: остаток на конец</div>
+          <div class="value" id="st-worst">$0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+window.I18N = {
+  ru: {
+    back: "← Все темы",
+    title: "Правило 4% на пенсии",
+    intro: "50 возможных путей рынка для одного и того же портфеля. Один и тот же процент снятия где-то сработает, а где-то обнулит счёт раньше срока — всё решает порядок доходностей, а не только их среднее.",
+    f_portfolio: "Начальный портфель", f_withdraw: "Ставка снятия в год", f_years: "Лет на пенсии",
+    f_return: "Ожидаемая доходность", f_vol: "Волатильность", f_rerun: "🎲 Пересчитать 50 путей",
+    leg_paths: "50 случайных путей рынка", leg_median: "Медианный путь",
+    tt_year: "Год", tt_median: "Медиана",
+    st_success: "Доля путей без обнуления счёта", st_worst: "Худший путь: остаток на конец",
+    end_median: "Медиана"
+  },
+  en: {
+    back: "← All topics",
+    title: "The 4% Retirement Rule",
+    intro: "50 possible market paths for the same portfolio. The same withdrawal rate works out fine on some paths and runs the account dry early on others — it's the order of returns that decides, not just their average.",
+    f_portfolio: "Starting portfolio", f_withdraw: "Annual withdrawal rate", f_years: "Years in retirement",
+    f_return: "Expected return", f_vol: "Volatility", f_rerun: "🎲 Re-run 50 paths",
+    leg_paths: "50 random market paths", leg_median: "Median path",
+    tt_year: "Year", tt_median: "Median",
+    st_success: "Share of paths that never hit zero", st_worst: "Worst path: ending balance",
+    end_median: "Median"
+  }
+};
+</script>
+<script src="../../assets/common.js"></script>
+<script src="../../assets/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
