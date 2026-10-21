@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finance Explainers</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brand">Finance Explainers <span class="sub" data-i18n="brand_sub">/ интерактивные объяснения финансов</span></div>
+    <div class="controls">
+      <button class="iconbtn" id="lang-toggle">EN</button>
+      <button class="iconbtn" id="theme-toggle">🌙</button>
+    </div>
+  </div>
+
+  <div class="category-head">
+    <div class="tag" style="color:var(--text-muted); font-size:12px; text-transform:uppercase; letter-spacing:.04em;" data-i18n="cat_tag">Категория</div>
+    <h1 data-i18n="cat_title">Личные финансы</h1>
+    <p data-i18n="cat_desc">Двигай слайдеры — смотри, как реально работают проценты, инфляция, кредиты и пенсионные накопления.</p>
+  </div>
+
+  <div class="grid">
+
+    <a class="card" href="topics/compound-interest/index.html">
+      <div class="tag" data-i18n="c1_tag">Explainer</div>
+      <h3 data-i18n="c1_title">Сложный процент и инфляция</h3>
+      <p data-i18n="c1_desc">Почему время важнее суммы — и как инфляция незаметно съедает рост.</p>
+    </a>
+
+    <a class="card soon" href="#">
+      <span class="badge-soon" data-i18n="soon">скоро</span>
+      <div class="tag" data-i18n="c2_tag">Explainer</div>
+      <h3 data-i18n="c2_title">DCA vs разовая инвестиция</h3>
+      <p data-i18n="c2_desc">Что выгоднее: вложить всё сразу или растянуть покупки во времени.</p>
+    </a>
+
+    <a class="card soon" href="#">
+      <span class="badge-soon" data-i18n="soon">скоро</span>
+      <div class="tag" data-i18n="c3_tag">Explainer</div>
+      <h3 data-i18n="c3_title">Кредитный рейтинг и APR vs APY</h3>
+      <p data-i18n="c3_desc">Почему две одинаковые на вид ставки стоят тебе разных денег.</p>
+    </a>
+
+    <a class="card soon" href="#">
+      <span class="badge-soon" data-i18n="soon">скоро</span>
+      <div class="tag" data-i18n="c4_tag">Explainer</div>
+      <h3 data-i18n="c4_title">Амортизация кредита</h3>
+      <p data-i18n="c4_desc">Почему первые годы ипотеки ты платишь банку, а не себе.</p>
+    </a>
+
+    <a class="card soon" href="#">
+      <span class="badge-soon" data-i18n="soon">скоро</span>
+      <div class="tag" data-i18n="c5_tag">Explainer</div>
+      <h3 data-i18n="c5_title">Правило 4% на пенсии</h3>
+      <p data-i18n="c5_desc">Сколько можно безопасно тратить с накоплений — и почему порядок доходностей важен.</p>
+    </a>
+
+    <a class="card soon" href="#">
+      <span class="badge-soon" data-i18n="soon">скоро</span>
+      <div class="tag" data-i18n="c6_tag">Explainer</div>
+      <h3 data-i18n="c6_title">Эффективная vs маржинальная налоговая ставка</h3>
+      <p data-i18n="c6_desc">Почему переход в новую налоговую вилку не съедает всю зарплату.</p>
+    </a>
+
+    <a class="card soon" href="#">
+      <span class="badge-soon" data-i18n="soon">скоро</span>
+      <div class="tag" data-i18n="c7_tag">Explainer</div>
+      <h3 data-i18n="c7_title">Как работает страхование</h3>
+      <p data-i18n="c7_desc">Пул риска: почему тысячи платят понемногу, чтобы один не потерял всё.</p>
+    </a>
+
+    <a class="card soon" href="#">
+      <span class="badge-soon" data-i18n="soon">скоро</span>
+      <div class="tag" data-i18n="c8_tag">Explainer</div>
+      <h3 data-i18n="c8_title">Snowball vs Avalanche</h3>
+      <p data-i18n="c8_desc">Две стратегии закрытия долгов — какая быстрее и какая дешевле.</p>
+    </a>
+
+  </div>
+</div>
+
+<script>
+window.I18N = {
+  ru: {
+    brand_sub: "/ интерактивные объяснения финансов",
+    cat_tag: "Категория", cat_title: "Личные финансы",
+    cat_desc: "Двигай слайдеры — смотри, как реально работают проценты, инфляция, кредиты и пенсионные накопления.",
+    soon: "скоро",
+    c1_tag: "Explainer", c1_title: "Сложный процент и инфляция", c1_desc: "Почему время важнее суммы — и как инфляция незаметно съедает рост.",
+    c2_tag: "Explainer", c2_title: "DCA vs разовая инвестиция", c2_desc: "Что выгоднее: вложить всё сразу или растянуть покупки во времени.",
+    c3_tag: "Explainer", c3_title: "Кредитный рейтинг и APR vs APY", c3_desc: "Почему две одинаковые на вид ставки стоят тебе разных денег.",
+    c4_tag: "Explainer", c4_title: "Амортизация кредита", c4_desc: "Почему первые годы ипотеки ты платишь банку, а не себе.",
+    c5_tag: "Explainer", c5_title: "Правило 4% на пенсии", c5_desc: "Сколько можно безопасно тратить с накоплений — и почему порядок доходностей важен.",
+    c6_tag: "Explainer", c6_title: "Эффективная vs маржинальная налоговая ставка", c6_desc: "Почему переход в новую налоговую вилку не съедает всю зарплату.",
+    c7_tag: "Explainer", c7_title: "Как работает страхование", c7_desc: "Пул риска: почему тысячи платят понемногу, чтобы один не потерял всё.",
+    c8_tag: "Explainer", c8_title: "Snowball vs Avalanche", c8_desc: "Две стратегии закрытия долгов — какая быстрее и какая дешевле."
+  },
+  en: {
+    brand_sub: "/ interactive finance explainers",
+    cat_tag: "Category", cat_title: "Personal Finance",
+    cat_desc: "Drag the sliders — see how compounding, inflation, loans and retirement withdrawals actually work.",
+    soon: "soon",
+    c1_tag: "Explainer", c1_title: "Compound Interest & Inflation", c1_desc: "Why time matters more than the amount — and how inflation quietly eats your growth.",
+    c2_tag: "Explainer", c2_title: "DCA vs Lump Sum", c2_desc: "Is it better to invest everything at once, or spread it out over time?",
+    c3_tag: "Explainer", c3_title: "Credit Score & APR vs APY", c3_desc: "Why two seemingly identical rates can cost you very different amounts.",
+    c4_tag: "Explainer", c4_title: "Loan Amortization", c4_desc: "Why the first years of a mortgage mostly pay the bank, not your balance.",
+    c5_tag: "Explainer", c5_title: "The 4% Retirement Rule", c5_desc: "How much you can safely withdraw — and why the order of returns matters.",
+    c6_tag: "Explainer", c6_title: "Effective vs Marginal Tax Rate", c6_desc: "Why moving into a new tax bracket doesn't eat your whole paycheck.",
+    c7_tag: "Explainer", c7_title: "How Insurance Works", c7_desc: "Risk pooling: why thousands paying a little protects one from losing everything.",
+    c8_tag: "Explainer", c8_title: "Snowball vs Avalanche", c8_desc: "Two debt payoff strategies — which is faster, which is cheaper."
+  }
+};
+</script>
+<script src="assets/common.js"></script>
+</body>
+</html>
